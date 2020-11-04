@@ -378,6 +378,7 @@ const expend = [
 	{ type: "restaurant", title: "旺仔牛奶", money: 7.00, time: {year: 2020, month: 11, day: 2, week: "一"}, explain: "2瓶", remarks: "超市" },
 	{ type: "restaurant", title: "早餐", money: 6.00, time: {year: 2020, month: 11, day: 3, week: "二"}, explain: "肠粉", remarks: "摆摊的" },
 	{ type: "restaurant", title: "午餐", money: 14.88, time: {year: 2020, month: 11, day: 3, week: "二"}, explain: "烤肉饭", remarks: "饿了吗外卖" },
+	{ type: "restaurant", title: "早餐", money: 6.00, time: {year: 2020, month: 11, day: 4, week: "三"}, explain: "肠粉", remarks: "摆摊的" },
 	{ type: "restaurant", title: "午餐", money: 17.88, time: {year: 2020, month: 11, day: 4, week: "三"}, explain: "烤肉饭", remarks: "饿了吗外卖" },
 	// 2020年12月
 	{ type: "", title: "", money: 0, time: {year: 0, month: 0, day: 0, week: ""}, explain: "", remarks: "" }
