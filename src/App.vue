@@ -2,7 +2,7 @@
 	<div id="app">
 		<div id="nav">
 			<div class="first">
-				<!-- <h3 class="title"><router-link to="/about">我的简历</router-link></h3> -->
+				<h3 class="title"><router-link to="/resume">我的简历</router-link></h3>
 			</div>
 			<div class="first">
 				<h3 class="title">收支</h3>
@@ -10,7 +10,7 @@
 					<li>
 						<h4 class="title">2020年</h4>
 						<ul class="second">
-							<li><router-link :to="{name: 'Home', params: { year: '2020', month:'1' }}">1月</router-link></li>
+							<li v-for="(item,index) in month" :key="index"><router-link :to="{name: 'InAndOut', params: { year: 2020, month: item }}">{{item}}月</router-link></li>
 							<!-- <li><router-link to="/">2月</router-link></li>
 							<li><router-link to="/">3月</router-link></li>
 							<li><router-link to="/">4月</router-link></li>
@@ -64,7 +64,7 @@ export default {
 	name: "", //组件名称
 	data() {
 		return {
-			
+			month: [1,2,3,4,5,6,7,8,9,10,11,12]
 		}
 	}, //数据
 	components: {}, //包含 Vue 实例可用组件的哈希表。

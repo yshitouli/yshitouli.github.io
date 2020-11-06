@@ -1,14 +1,26 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import InAndOut from '../views/InAndOut.vue';
+import Resume from '../views/Resume.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
 	{
-		path: '/:year',
+		path: '/',
 		name: 'Home',
 		component: Home
+	},
+	{
+		path: '/inAndOut/:year/:month',
+		name: 'InAndOut',
+		component: InAndOut
+	},
+	{
+		path: '/resume',
+		name: 'Resume',
+		component: Resume
 	},
 	{
 		path: '/about',

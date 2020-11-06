@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
-		<h1>路由参数：{{ this.$route.params }}</h1>
-		<img alt="Vue logo" src="../assets/logo.png" @click="getD">
+		<h1>这里是首页</h1>
+		<img alt="Vue logo" src="../assets/logo.png">
 		<HelloWorld msg="Welcome to Your Vue.js App"/>
 	</div>
 </template>
