@@ -382,6 +382,7 @@ const expend = [
 	{ type: "restaurant", title: "午餐", money: 17.88, time: {year: 2020, month: 11, day: 4, week: "三"}, explain: "烤肉饭", remarks: "饿了吗外卖" },
 	{ type: "restaurant", title: "早餐", money: 6.00, time: {year: 2020, month: 11, day: 5, week: "四"}, explain: "肠粉", remarks: "摆摊的" },
 	{ type: "restaurant", title: "午餐", money: 14.88, time: {year: 2020, month: 11, day: 5, week: "四"}, explain: "烤肉饭", remarks: "饿了吗外卖" },
+	{ type: "restaurant", title: "早餐", money: 6.00, time: {year: 2020, month: 11, day: 6, week: "五"}, explain: "肠粉", remarks: "摆摊的" },
 	// 2020年12月
 	{ type: "", title: "", money: 0, time: {year: 0, month: 0, day: 0, week: ""}, explain: "", remarks: "" }
 ];

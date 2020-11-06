@@ -1,83 +1,55 @@
 <template>
 	<div id="app">
 		<div id="nav">
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/">Home</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
-			<router-link to="/about">About</router-link>
+			<div class="first">
+				<!-- <h3 class="title"><router-link to="/about">我的简历</router-link></h3> -->
+			</div>
+			<div class="first">
+				<h3 class="title">收支</h3>
+				<ul class="second">
+					<li>
+						<h4 class="title">2020年</h4>
+						<ul class="second">
+							<li><router-link :to="{name: 'Home', params: { year: '2020', month:'1' }}">1月</router-link></li>
+							<!-- <li><router-link to="/">2月</router-link></li>
+							<li><router-link to="/">3月</router-link></li>
+							<li><router-link to="/">4月</router-link></li>
+							<li><router-link to="/">5月</router-link></li>
+							<li><router-link to="/">6月</router-link></li>
+							<li><router-link to="/">7月</router-link></li>
+							<li><router-link to="/">8月</router-link></li>
+							<li><router-link to="/">9月</router-link></li>
+							<li><router-link to="/">10月</router-link></li>
+							<li><router-link to="/">11月</router-link></li>
+							<li><router-link to="/">12月</router-link></li> -->
+						</ul>
+					</li>
+					<li>
+						<h4 class="title">2021年</h4>
+						<ul class="second">
+							<!-- <li><router-link to="/">1月</router-link></li>
+							<li><router-link to="/">2月</router-link></li>
+							<li><router-link to="/">3月</router-link></li>
+							<li><router-link to="/">4月</router-link></li>
+							<li><router-link to="/">5月</router-link></li>
+							<li><router-link to="/">6月</router-link></li>
+							<li><router-link to="/">7月</router-link></li>
+							<li><router-link to="/">8月</router-link></li>
+							<li><router-link to="/">9月</router-link></li>
+							<li><router-link to="/">10月</router-link></li>
+							<li><router-link to="/">11月</router-link></li>
+							<li><router-link to="/">12月</router-link></li> -->
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="first">
+				<h3 class="title">收支图表</h3>
+				<ul class="second">
+					<!-- <li><router-link to="/about">2020年</router-link></li>
+					<li><router-link to="/about">2021年</router-link></li> -->
+				</ul>
+			</div>
 		</div>
 
 		<!-- 路由出口 -->
@@ -96,12 +68,7 @@ export default {
 		}
 	}, //数据
 	components: {}, //包含 Vue 实例可用组件的哈希表。
-	props: {
-		"": {
-			type: String,
-			default: "a"
-		}
-	}, //来自父组件的数据
+	props: {}, //来自父组件的数据
 	methods: {}, //事件处理器
 	computed: {}, //计算属性 return
 	watch: {}, //key: data、props、computed中的    v:方法(newVal,oldVal)、对象、字符串(方法名)      deep：深度监听
@@ -144,6 +111,7 @@ export default {
 			display: block;
 		}
 		overflow-y: scroll;
+		cursor: pointer;
 	}
 	#contain{
 		width: calc(100% - 15rem);
