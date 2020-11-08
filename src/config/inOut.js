@@ -1,6 +1,9 @@
 
 // 关于收入支出的配置
 
+
+// 收入或者支出
+const FLAG = ["income", "expend"];
 // 收入类型
 const INCOMETYPE = [
 	{ type: "wages", explain: "工资：工作收入" },
@@ -30,6 +33,7 @@ const YEAR = ["2020", "2021"];
 const MONTH = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 
 export default {
+	FLAG,
 	INCOMETYPE,
 	EXPENDTYPE,
 	YEAR,

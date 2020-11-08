@@ -15,13 +15,7 @@ export default {
 	components: {
 		HelloWorld
 	},
-	created() {
-		this.getD();
-	},
-	methods: {
-		getD() {
-			console.log(this.$route.params)
-		}
-	}
+	created() {},
+	methods: {}
 }
 </script>

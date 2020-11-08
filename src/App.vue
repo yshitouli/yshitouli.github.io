@@ -60,6 +60,9 @@
 </template>
 
 <script>
+import { list } from './data';
+import { util } from './util';
+
 export default {
 	name: "", //组件名称
 	data() {
@@ -74,7 +77,12 @@ export default {
 	watch: {}, //key: data、props、computed中的    v:方法(newVal,oldVal)、对象、字符串(方法名)      deep：深度监听
 	// 生命周期：
 	beforeCreate() {}, //生命周期：在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用。
-	created() {}, //在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，property 和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el property 目前尚不可用。
+	created() {
+		console.log("所有的集合",list);
+		console.log("收入的集合",util.getFlag(list, "income"));
+		console.log("支出的集合",util.getFlag(list, "expend"));
+		// console.log(util);
+	}, //在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，property 和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el property 目前尚不可用。
 	beforeMount() {}, //在挂载开始之前被调用：相关的 render 函数首次被调用。该钩子在服务器端渲染期间不被调用。
 	mounted() {}, //实例被挂载后调用，这时 el 被新创建的 vm.$el 替换了。如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。该钩子在服务器端渲染期间不被调用。
 	beforeUpdate() {}, //数据更新时调用，发生在虚拟 DOM 打补丁之前。这里适合在更新之前访问现有的 DOM，比如手动移除已添加的事件监听器。该钩子在服务器端渲染期间不被调用，因为只有初次渲染会在服务端进行。

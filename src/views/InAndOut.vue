@@ -7,7 +7,6 @@
 
 
 <script>
-import data from '../data';
 
 export default {
 	name: "InAndOut",
@@ -16,25 +15,17 @@ export default {
 			yearMonth: {
 				year: this.$route.params.year,
 				month: this.$route.params.month
-			},
-			income: null,
-			expend: null
+			}
 		}
 	},
 	methods: {
-		getD() {
-			console.log(this.yearMonth);
-			console.log(this.income);
-			console.log(this.expend);
-		},
-		getData() {
-			this.income = data.income;
-			this.expend = data.expend;
+		getParams() {
+			console.log(this.yearMonth.year);
+			console.log(this.yearMonth.month);
 		}
 	},
 	created() {
-		this.getData();
-		this.getD();
+		this.getParams();
 	}
 }
 </script>
