@@ -8,14 +8,6 @@
 <script>
 
 export default {
-	name: "Resume",
-	methods: {
-		getD() {
-			console.log(this.$route.params)
-		}
-	},
-	created() {
-		this.getD();
-	}
+	name: "Resume"
 }
 </script>

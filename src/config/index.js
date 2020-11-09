@@ -1,3 +1,4 @@
 export default {
-	inOut: require("./inOut.js")
+	inOut: require("./inOut.js"),
+	user: require("./user.js")
 }
