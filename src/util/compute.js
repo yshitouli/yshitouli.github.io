@@ -34,9 +34,9 @@ function getYearAll(list, year) {
 			yearData.push(item);
 		}
 	});
-	yearData = yearData.sort(function(a, b) {
+	/* yearData = yearData.sort(function(a, b) {
 		return a.time.year - b.time.year;
-	})
+	}); */
 	return yearData;
 }
 
@@ -54,9 +54,9 @@ function getMonthAll(list, year, month) {
 			monthData.push(item);
 		}
 	});
-	monthData = monthData.sort(function(a, b) {
+	/* monthData = monthData.sort(function(a, b) {
 		return a.time.year - b.time.year;
-	})
+	}); */
 	return monthData;
 }
 

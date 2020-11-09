@@ -403,13 +403,8 @@
 	{ "flag": "income", "type": "other", "title": "转账", "money": 13000.00, "time": {"year": 2020, "month": 11, "day": 7, "week": "六"}, "explain": "妈", "remarks": "" },
 	{ "flag": "expend", "type": "restaurant", "title": "早餐", "money": 6.00, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "肠粉", "remarks": "摆摊的" },
 	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 6.00, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "肠粉", "remarks": "摆摊的" },
-	{ "flag": "expend", "type": "cloth", "title": "毛衣", "money": 139.00, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "加绒", "remarks": "淘宝" },
-	{ "flag": "expend", "type": "cloth", "title": "毛衣", "money": 139.00, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "加绒", "remarks": "淘宝" },
-	{ "flag": "expend", "type": "cloth", "title": "毛衣", "money": 139.00, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "加绒", "remarks": "淘宝" },
-	{ "flag": "expend", "type": "cloth", "title": "裤子", "money": 139.00, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "加绒", "remarks": "淘宝" },
-	{ "flag": "expend", "type": "cloth", "title": "裤子", "money": 139.00, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "加绒", "remarks": "淘宝" },
-	{ "flag": "expend", "type": "cloth", "title": "裤子", "money": 159.00, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "加绒", "remarks": "淘宝" },
-	{ "flag": "expend", "type": "cloth", "title": "外套", "money": 329.00, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "加绒", "remarks": "淘宝" },
 	{ "flag": "expend", "type": "electron", "title": "电脑", "money": 12996.88, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "", "remarks": "华为" },
-	{ "flag": "expend", "type": "restaurant", "title": "晚餐", "money": 27.30, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "炸鸡", "remarks": "美团外卖" }
+	{ "flag": "expend", "type": "restaurant", "title": "晚餐", "money": 27.30, "time": {"year": 2020, "month": 11, "day": 8, "week": "日"}, "explain": "炸鸡", "remarks": "美团外卖" },
+	{ "flag": "expend", "type": "life", "title": "洗衣液", "money": 15.10, "time": {"year": 2020, "month": 11, "day": 9, "week": "一"}, "explain": "1袋", "remarks": "淘宝" },
+	{ "flag": "expend", "type": "restaurant", "title": "早餐", "money": 6.00, "time": {"year": 2020, "month": 11, "day": 9, "week": "一"}, "explain": "肠粉", "remarks": "摆摊的" }
 ]
