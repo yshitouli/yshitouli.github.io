@@ -2,84 +2,135 @@
 /* 数据计算 */
 
 /**
- * 获取 支出或者收入所有集合
- * 
- * @param { Array } list 所有的集合
- * @param { String } flag 条件（支出|收入）
- * @return { Array } 支出或收入的所有集合
+ * 获取指定集合
+ * @param { Array } list 原始集合
+ * @param { String } [flag] 支出|收入
+ * @param { Number } [year] 年
+ * @param { Number } [month] 月(有月，则必须有年)
+ * @param { String } [type] 收支类型
+ * @return { Array } 返回指定的集合
  */
-function getFlag(list, flag) {
-	let allList = [];
+function getList(list, flag, year, month, type) {
+	let arr = [];
+	if(arguments.length === 1) {
+		// list，返回所有的数据，不含空
+		flag = "";
+		year = 0;
+		month = 0;
+		type = "";
+		list.forEach(item => {
+			if(item.money != 0) {
+				arr.push(item);
+			}
+		});
+	} else if(arguments.length === 2) {
+		if(typeof(flag)==="string") {
+			if(["income","expend"].indexOf(flag)!=-1) {
+				// list和flag，返回所有 支出或收入
+				year = 0;
+				month = 0;
+				type = "";
+				list.forEach(item => {
+					if(item.flag===flag && item.money!=0) {
+						arr.push(item);
+					}
+				});
+			} else {
+				// list和type，返回某类所有的 收支
+				type = flag;
+				flag = "";
+				year = 0;
+				month = 0;
+				list.forEach(item => {
+					
+				});
+			}
+		} else {
+			// list和year，返回某年所有的 收支
+			year = flag;
+			flag = "";
+			month = 0;
+			type = "";
+			list.forEach(item => {
+					
+			});
+		}
+	} else if(arguments.length === 3) {
+		if(typeof(flag)==="string") {
+			if(typeof(year)==="number") {
+				// list、flag和year，返回某年所有的 支出或收入
+				month = 0;
+				type = "";
+				list.forEach(item => {
+					
+				});
+			} else {
+				// list、flag和type，返回某类所有的 支出或收入
+				type = year;
+				year = 0;
+				month = 0;
+				list.forEach(item => {
+					
+				});
+			}
+		} else {
+			if(typeof(year)==="number") {
+				// list、year和month，返回某年某月的所有 收支
+				month = year;
+				year = flag;
+				flag = "";
+				type = "";
+				list.forEach(item => {
+					
+				});
+			} else {
+				// list、year和type，返回某年某类的所有 收支
+				type = year;
+				year = flag;
+				flag = "";
+				month = 0;
+				list.forEach(item => {
+					
+				});
+			}
+		}
+	} else if(arguments.length === 4) {
+		if(typeof(flag) === "string") {
+			if(typeof(month) === "number") {
+				// list、flag、year和month，返回某年某月的所有 支出或收入
+				type = "";
+				list.forEach(item => {
+					
+				});
+			} else {
+				// list、flag、year和type，返回某年某类的所有 支出或收入
+				type = month;
+				month = 0;
+				list.forEach(item => {
+					
+				});
+			}
+		} else {
+			// list、year、month和type，返回某年某月某类的所有 收支
+			type = month;
+			month = year;
+			year = flag;
+			flag = "";
+			list.forEach(item => {
+					
+			});
+		}
+	}
+	// 5个参数，返回某年某月某类所有的 支出或收入
 	list.forEach(item => {
-		if(item.flag===flag && item.money>0) {
-			allList.push(item);
-		}
+					
 	});
-	/* allList = allList.sort(function(a, b) {
-		return a.time.year - b.item.year;
-	}); */
-	return allList;
-}
-
-/**
- * 获取 某一年 所有 数据项
- * @param { Array } list 总集合
- * @param { Number } year 要获取的 年份
- * @return { Array } 返回当年的所有 项
- */
-function getYearAll(list, year) {
-	let yearData = [];
-	list.forEach(item => {
-		if(item.time.year==year && item.money>0) {
-			yearData.push(item);
-		}
-	});
-	/* yearData = yearData.sort(function(a, b) {
-		return a.time.year - b.time.year;
-	}); */
-	return yearData;
-}
-
-/**
- * 获取 某一年 某月 数据项
- * @param { Array } list 总集合
- * @param { Number } year 要获取的 年份
- * @param { Number } year 要获取的 月份
- * @return { Array } 返回当月的所有 项
- */
-function getMonthAll(list, year, month) {
-	let yearData = getYearAll(list, year);
-	let monthData = [];
-	yearData.forEach(item => {
-		if(item.time.month==month && item.money>0) {
-			monthData.push(item);
-		}
-	});
-	/* monthData = monthData.sort(function(a, b) {
-		return a.time.year - b.time.year;
-	}); */
-	return monthData;
-}
-
-/**
- * 获取 某年或者某月或者全部的 某类集合
- * @param { Array } list 年集合|月集合|总集合
- * @param { String } type 要获取的类别
- * @return { Array } 该类集合
- */
-function getType(list, type) {
-	let typeData = [];
-	list.forEach(item => {
-		if(item.type===type && item.money>0) {
-			typeData.push(item);
-		}
-	});
-	return typeData;
+	return arr;
 }
 
 /**
  * 计算总和
- * @param {*} list 要计算的集合
+ * @param { list } list 要计算的集合
  * @return { Number } 总和
  */
 function computeSum(list) {
@@ -92,10 +143,7 @@ function computeSum(list) {
 
 
 module.exports = {
-	getFlag,
-	getYearAll,
-	getMonthAll,
-	getType,
+	getList,
 	computeSum
 }
 
