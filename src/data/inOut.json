@@ -408,5 +408,7 @@
 	{ "flag": "expend", "type": "life", "title": "洗衣液", "money": 15.10, "time": {"year": 2020, "month": 11, "day": 9, "week": "一"}, "explain": "1袋", "remarks": "淘宝" },
 	{ "flag": "expend", "type": "restaurant", "title": "早餐", "money": 6.00, "time": {"year": 2020, "month": 11, "day": 9, "week": "一"}, "explain": "肠粉", "remarks": "摆摊的" },
 	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 7.00, "time": {"year": 2020, "month": 11, "day": 9, "week": "一"}, "explain": "炒饭", "remarks": "摆摊的" },
-	{ "flag": "expend", "type": "electron", "title": "扩展坞", "money": 125.00, "time": {"year": 2020, "month": 11, "day": 9, "week": "一"}, "explain": "", "remarks": "华为商城" }
+	{ "flag": "expend", "type": "electron", "title": "扩展坞", "money": 125.00, "time": {"year": 2020, "month": 11, "day": 9, "week": "一"}, "explain": "", "remarks": "华为商城" },
+	{ "flag": "expend", "type": "restaurant", "title": "早餐", "money": 6.00, "time": {"year": 2020, "month": 11, "day": 10, "week": "二"}, "explain": "肠粉", "remarks": "摆摊的" },
+	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 16.09, "time": {"year": 2020, "month": 11, "day": 10, "week": "二"}, "explain": "炒饭", "remarks": "饿了吗外卖" }
 ]
