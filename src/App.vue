@@ -81,6 +81,9 @@ export default {
 		console.log("所有的集合",list);
 		console.log("收入的集合",util.getFlag(list, "income"));
 		console.log("支出的集合",util.getFlag(list, "expend"));
+		console.log("2020年",util.getYearAll(list, 2020));
+		console.log("2020年11月",util.getMonthAll(list, 2020, 11));
+		console.log("2020年餐饮",util.getType(util.getYearAll(list, 2020), "restaurant"));
 		// console.log(util);
 	}, //在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，property 和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el property 目前尚不可用。
 	beforeMount() {}, //在挂载开始之前被调用：相关的 render 函数首次被调用。该钩子在服务器端渲染期间不被调用。

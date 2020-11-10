@@ -11,7 +11,7 @@
 function getFlag(list, flag) {
 	let allList = [];
 	list.forEach(item => {
-		if(item.flag === flag) {
+		if(item.flag===flag && item.money>0) {
 			allList.push(item);
 		}
 	});
@@ -30,7 +30,7 @@ function getFlag(list, flag) {
 function getYearAll(list, year) {
 	let yearData = [];
 	list.forEach(item => {
-		if(item.time.year == year) {
+		if(item.time.year==year && item.money>0) {
 			yearData.push(item);
 		}
 	});
@@ -48,9 +48,10 @@ function getYearAll(list, year) {
  * @return { Array } 返回当月的所有 项
  */
 function getMonthAll(list, year, month) {
-	let monthData = getYearAll(list, year);
-	list.forEach(item => {
-		if(item.time.month == month) {
+	let yearData = getYearAll(list, year);
+	let monthData = [];
+	yearData.forEach(item => {
+		if(item.time.month==month && item.money>0) {
 			monthData.push(item);
 		}
 	});
@@ -60,11 +61,42 @@ function getMonthAll(list, year, month) {
 	return monthData;
 }
 
+/**
+ * 获取 某年或者某月或者全部的 某类集合
+ * @param { Array } list 年集合|月集合|总集合
+ * @param { String } type 要获取的类别
+ * @return { Array } 该类集合
+ */
+function getType(list, type) {
+	let typeData = [];
+	list.forEach(item => {
+		if(item.type===type && item.money>0) {
+			typeData.push(item);
+		}
+	});
+	return typeData;
+}
+
+/**
+ * 计算总和
+ * @param {*} list 要计算的集合
+ * @return { Number } 总和
+ */
+function computeSum(list) {
+	let sum = 0;
+	list.forEach(item => {
+		sum += Number(item.money);
+	});
+	return sum.toFixed(2);
+}
+
 
 module.exports = {
 	getFlag,
 	getYearAll,
-	getMonthAll
+	getMonthAll,
+	getType,
+	computeSum
 }
 
 
