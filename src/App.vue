@@ -10,7 +10,7 @@
 					<li>
 						<h4 class="title">2020年</h4>
 						<ul class="second">
-							<li v-for="(item,index) in month" :key="index"><router-link :to="{name: 'InAndOut', params: { year: 2020, month: item }}">{{item}}月</router-link></li>
+							<!-- <li v-for="(item,index) in month" :key="index"><router-link :to="{name: 'InAndOut', params: { year: 2020, month: item }}">{{item}}月</router-link></li> -->
 							<!-- <li><router-link to="/">2月</router-link></li>
 							<li><router-link to="/">3月</router-link></li>
 							<li><router-link to="/">4月</router-link></li>
@@ -67,24 +67,31 @@ export default {
 	name: "", //组件名称
 	data() {
 		return {
-			month: [1,2,3,4,5,6,7,8,9,10,11,12]
+			yearMonth: []
 		}
 	}, //数据
 	components: {}, //包含 Vue 实例可用组件的哈希表。
 	props: {}, //来自父组件的数据
-	methods: {}, //事件处理器
+	methods: {
+		getYearMonth() {
+			let year = util.getYear(util.getList(list));
+			year.forEach(item => {
+				let month = util.getMonth(util.getList(list,item));
+				let obj = {
+					year: year,
+					month: month
+				}
+				this.yearMonth.push(obj);
+			});
+			console.log(this.yearMonth);
+		}
+	}, //事件处理器
 	computed: {}, //计算属性 return
 	watch: {}, //key: data、props、computed中的    v:方法(newVal,oldVal)、对象、字符串(方法名)      deep：深度监听
 	// 生命周期：
 	beforeCreate() {}, //生命周期：在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用。
 	created() {
-		console.log("所有的集合",list);
-		console.log("收入的集合",util.getFlag(list, "income"));
-		console.log("支出的集合",util.getFlag(list, "expend"));
-		console.log("2020年",util.getYearAll(list, 2020));
-		console.log("2020年11月",util.getMonthAll(list, 2020, 11));
-		console.log("2020年餐饮",util.getType(util.getYearAll(list, 2020), "restaurant"));
-		// console.log(util);
+		this.getYearMonth();
 	}, //在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，property 和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el property 目前尚不可用。
 	beforeMount() {}, //在挂载开始之前被调用：相关的 render 函数首次被调用。该钩子在服务器端渲染期间不被调用。
 	mounted() {}, //实例被挂载后调用，这时 el 被新创建的 vm.$el 替换了。如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。该钩子在服务器端渲染期间不被调用。
