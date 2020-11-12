@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+
 import Home from '../views/Home.vue';
 import InAndOut from '../views/InAndOut.vue';
 import Resume from '../views/Resume.vue';
+import Echarts from '../views/Echarts.vue';
 
 Vue.use(VueRouter);
 
@@ -13,14 +15,19 @@ const routes = [
 		component: Home
 	},
 	{
+		path: '/resume',
+		name: 'Resume',
+		component: Resume
+	},
+	{
 		path: '/inAndOut/:year/:month',
 		name: 'InAndOut',
 		component: InAndOut
 	},
 	{
-		path: '/resume',
-		name: 'Resume',
-		component: Resume
+		path: '/echarts/:year',
+		name: 'Echarts',
+		component: Echarts
 	},
 	{
 		path: '/about',

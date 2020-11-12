@@ -13,8 +13,8 @@ export default {
 	data() {
 		return {
 			yearMonth: {
-				year: this.$route.params.year,
-				month: this.$route.params.month
+				year: Number(this.$route.params.year),
+				month: Number(this.$route.params.month)
 			}
 		}
 	},

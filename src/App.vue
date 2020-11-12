@@ -7,38 +7,10 @@
 			<div class="first">
 				<h3 class="title">收支</h3>
 				<ul class="second">
-					<li>
-						<h4 class="title">2020年</h4>
-						<ul class="second">
-							<!-- <li v-for="(item,index) in month" :key="index"><router-link :to="{name: 'InAndOut', params: { year: 2020, month: item }}">{{item}}月</router-link></li> -->
-							<!-- <li><router-link to="/">2月</router-link></li>
-							<li><router-link to="/">3月</router-link></li>
-							<li><router-link to="/">4月</router-link></li>
-							<li><router-link to="/">5月</router-link></li>
-							<li><router-link to="/">6月</router-link></li>
-							<li><router-link to="/">7月</router-link></li>
-							<li><router-link to="/">8月</router-link></li>
-							<li><router-link to="/">9月</router-link></li>
-							<li><router-link to="/">10月</router-link></li>
-							<li><router-link to="/">11月</router-link></li>
-							<li><router-link to="/">12月</router-link></li> -->
-						</ul>
-					</li>
-					<li>
-						<h4 class="title">2021年</h4>
-						<ul class="second">
-							<!-- <li><router-link to="/">1月</router-link></li>
-							<li><router-link to="/">2月</router-link></li>
-							<li><router-link to="/">3月</router-link></li>
-							<li><router-link to="/">4月</router-link></li>
-							<li><router-link to="/">5月</router-link></li>
-							<li><router-link to="/">6月</router-link></li>
-							<li><router-link to="/">7月</router-link></li>
-							<li><router-link to="/">8月</router-link></li>
-							<li><router-link to="/">9月</router-link></li>
-							<li><router-link to="/">10月</router-link></li>
-							<li><router-link to="/">11月</router-link></li>
-							<li><router-link to="/">12月</router-link></li> -->
+					<li v-for="(item,index) in yearMonth" :key="index">
+						<h4 class="title">{{item.year}}</h4>
+						<ul class="third">
+							<li v-for="(item2,index2) in item.month" :key="index2"><router-link :to="{name: 'InAndOut', params: { year: item.year, month: item2 }}">{{item2}}月</router-link></li>
 						</ul>
 					</li>
 				</ul>
@@ -46,8 +18,7 @@
 			<div class="first">
 				<h3 class="title">收支图表</h3>
 				<ul class="second">
-					<!-- <li><router-link to="/about">2020年</router-link></li>
-					<li><router-link to="/about">2021年</router-link></li> -->
+					<li v-for="(item,index) in yearMonth" :key="index"><router-link :to="{name: 'Echarts', params: { year: item.year}}">2020年</router-link></li>
 				</ul>
 			</div>
 		</div>
@@ -78,7 +49,7 @@ export default {
 			year.forEach(item => {
 				let month = util.getMonth(util.getList(list,item));
 				let obj = {
-					year: year,
+					year: item,
 					month: month
 				}
 				this.yearMonth.push(obj);
