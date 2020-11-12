@@ -421,6 +421,7 @@
 	{ "flag": "expend", "type": "restaurant", "title": "早餐", "money": 6.00, "time": {"year": 2020, "month": 11, "day": 11, "week": "三"}, "explain": "肠粉", "remarks": "摆摊的" },
 	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 21.99, "time": {"year": 2020, "month": 11, "day": 11, "week": "三"}, "explain": "鸡肉炒饭", "remarks": "饿了吗外卖" },
 	{ "flag": "expend", "type": "restaurant", "title": "早餐", "money": 6.00, "time": {"year": 2020, "month": 11, "day": 12, "week": "四"}, "explain": "肠粉", "remarks": "摆摊的" },
+	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 18.80, "time": {"year": 2020, "month": 11, "day": 12, "week": "四"}, "explain": "鸡肉炒饭", "remarks": "饿了吗外卖" },
 
 	{ "flag": "", "type": "", "title": "", "money": 0, "time": {"year": 0, "month": 0, "day": 0, "week": ""}, "explain": "", "remarks": "" }
 ]
