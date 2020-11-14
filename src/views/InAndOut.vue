@@ -17,7 +17,7 @@
 					<div>
 						<p v-for="(val,i) in getDataList" :key="i">
 							<font v-if="val.time.day==item">
-							{{val.title}}-{{val.explain?"-"+val.explain:""}}：<strong v-if="val.flag=='expend'">{{val.money}}</strong><b v-else>{{val.money}}</b>元
+							{{val.title}}{{val.explain?"-"+val.explain:""}}：<strong v-if="val.flag=='expend'">{{val.money}}</strong><b v-else>{{val.money}}</b>元
 							</font>
 						</p>
 						<!-- 
@@ -27,7 +27,8 @@
 						<p>-：<strong>10.00</strong>元</p>
 						<p>-：<strong>10.00</strong>元</p>
 						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<strong>10.00</strong>元</p> -->
+						<p>-：<strong>10.00</strong>元</p>
+						-->
 					</div>
 				</li>
 				<!-- <li>
@@ -80,6 +81,7 @@ export default {
 	},
 	computed: {
 		getDataList() {
+			// console.log("发送"+this.year+"支出请求")
 			return util.getList(list,this.year,this.month);
 		},
 		getExpendSum() {
@@ -102,13 +104,6 @@ export default {
 		getParams() {
 			this.year = Number(this.$route.params.year);
 			this.month = Number(this.$route.params.month);
-			console.log("总",list);
-			console.log("this.year:",this.year);
-			console.log("年：",util.getList(list,"expend",this.year));
-		},
-		yangshi() {
-			console.log("已执行")
-			// this.$refs.pp.style.cssText = 'border-bottom:0.1rem solid #0000FF;';
 		}
 	},
 	watch: {},
@@ -117,9 +112,6 @@ export default {
 	},
 	updated() {
 		this.getParams();
-	},
-	mounted() {
-		this.yangshi();
 	}
 }
 </script>

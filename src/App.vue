@@ -57,7 +57,6 @@ export default {
 				}
 				this.yearMonth.push(obj);
 			});
-			console.log(this.yearMonth);
 		}
 	}, //事件处理器
 	computed: {}, //计算属性 return

@@ -1,5 +1,6 @@
 
 /* 数据计算 */
+let { inOut } = require("../config");
 
 /**
  * 获取指定集合
@@ -14,11 +15,11 @@ function getList(list, flag, year, month, type) {
 	let arr = [];
 	if(arguments.length === 1) {
 		// list，返回所有的数据，不含空
-		console.log("接收到总集合")
 		flag = "";
 		year = 0;
 		month = 0;
 		type = "";
+		console.log("接收到【全部数据】集合");
 		list.forEach(item => {
 			if(item.money != 0) {
 				arr.push(item);
@@ -31,6 +32,7 @@ function getList(list, flag, year, month, type) {
 				year = 0;
 				month = 0;
 				type = "";
+				console.log(`接收到【${inOut.FLAG[flag]}】集合`)
 				list.forEach(item => {
 					if(item.flag===flag && item.money!=0) {
 						arr.push(item);
@@ -42,6 +44,7 @@ function getList(list, flag, year, month, type) {
 				flag = "";
 				year = 0;
 				month = 0;
+				console.log(`接收到【${inOut.ALLTYPE[type]}】类的所有集合`);
 				list.forEach(item => {
 					if(item.type===type && item.money!=0) {
 						arr.push(item);
@@ -54,6 +57,7 @@ function getList(list, flag, year, month, type) {
 			flag = "";
 			month = 0;
 			type = "";
+			console.log(`接收到【${year}】年所有的集合`);
 			list.forEach(item => {
 				if(item.time.year===year && item.money!=0) {
 					arr.push(item);
@@ -64,9 +68,9 @@ function getList(list, flag, year, month, type) {
 		if(typeof(flag)==="string") {
 			if(typeof(year)==="number") {
 				// list、flag和year，返回某年所有的 支出或收入
-				console.log("接收到年支出或收入");
 				month = 0;
 				type = "";
+				console.log(`接收到【${year}】年的【${inOut.FLAG[flag]}】集合`);
 				list.forEach(item => {
 					if(item.flag===flag && item.time.year===year && item.money!=0) {
 						arr.push(item);
@@ -77,6 +81,7 @@ function getList(list, flag, year, month, type) {
 				type = year;
 				year = 0;
 				month = 0;
+				console.log(`接收到【${inOut.ALLTYPE[type]}】类的【${inOut.FLAG[flag]}】集合`);
 				list.forEach(item => {
 					if(item.flag===flag && item.type===type && item.money!=0) {
 						arr.push(item);
@@ -90,6 +95,7 @@ function getList(list, flag, year, month, type) {
 				year = flag;
 				flag = "";
 				type = "";
+				console.log(`接收到【${year}】年【${month}】月的所有集合`);
 				list.forEach(item => {
 					if(item.time.year===year && item.time.month===month && item.money!=0) {
 						arr.push(item);
@@ -101,6 +107,7 @@ function getList(list, flag, year, month, type) {
 				year = flag;
 				flag = "";
 				month = 0;
+				console.log(`接收到【${year}】年【${inOut.ALLTYPE[type]}】类的所有集合`);
 				list.forEach(item => {
 					if(item.time.year===year && item.type===type && item.money!=0) {
 						arr.push(item);
@@ -113,6 +120,7 @@ function getList(list, flag, year, month, type) {
 			if(typeof(month) === "number") {
 				// list、flag、year和month，返回某年某月的所有 支出或收入
 				type = "";
+				console.log(`接收到【${year}】年【${month}】月的【${inOut.FLAG[flag]}】集合`);
 				list.forEach(item => {
 					if(item.flag===flag && item.time.year===year && item.time.month===month && item.money!=0) {
 						arr.push(item);
@@ -122,6 +130,7 @@ function getList(list, flag, year, month, type) {
 				// list、flag、year和type，返回某年某类的所有 支出或收入
 				type = month;
 				month = 0;
+				console.log(`接收到【${year}】年【${inOut.ALLTYPE[type]}】类的【${inOut.FLAG[flag]}】集合`);
 				list.forEach(item => {
 					if(item.flag===flag && item.time.year===year && item.type===type && item.money!=0) {
 						arr.push(item);
@@ -134,6 +143,7 @@ function getList(list, flag, year, month, type) {
 			month = year;
 			year = flag;
 			flag = "";
+			console.log(`接收到【${year}】年【${month}】月【${inOut.ALLTYPE[type]}】类的所有集合`);
 			list.forEach(item => {
 				if(item.time.year===year && item.time.month===month && item.type===type && item.money!=0) {
 					arr.push(item);
@@ -142,6 +152,7 @@ function getList(list, flag, year, month, type) {
 		}
 	} else {
 		// 5个参数，返回某年某月某类所有的 支出或收入
+		console.log(`接收到【${year}】年【${month}】月【${inOut.ALLTYPE[type]}】类的【${inOut.FLAG[flag]}】集合`);
 		list.forEach(item => {
 			if(item.flag===flag && item.time.year===year && item.time.month===month && item.type===type && item.money!=0) {
 				arr.push(item);
