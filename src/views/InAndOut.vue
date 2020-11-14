@@ -4,7 +4,7 @@
 		<!-- <h1> <span v-text="year"></span> 年 收入和支出</h1> -->
 	
 		<div class="yearSum">
-			<span>年总收入：</span><b>{{getYearIncomeSum}}</b> 元 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<span>年总收入：</span><b>{{getYearIncomeSum}}</b> 元 ===========
 			<span>年总支出：</span><strong>{{getYearExpendSum}}</strong> 元
 		</div>
 	
@@ -12,20 +12,25 @@
 			<h2>{{this.$route.params.month}}月份</h2>
 			<!-- <h2> <span v-text="month"></span> 月份</h2> -->
 			<ul>
-				<!-- <li v-for="(item,index) in day" :key="index">
+				<li v-for="(item,index) in day" :key="index">
 					<h3>{{item}}日：</h3>
 					<div>
-						<p>-：<strong>10.00</strong>元</p>
+						<p v-for="(val,i) in getDataList" :key="i">
+							<font v-if="val.time.day==item">
+							{{val.title}}-{{val.explain?"-"+val.explain:""}}：<strong v-if="val.flag=='expend'">{{val.money}}</strong><b v-else>{{val.money}}</b>元
+							</font>
+						</p>
+						<!-- 
 						<p>-：<b>100.00</b>元</p>
 						<p>-：<strong>10.00</strong>元</p>
 						<p>-：<strong>10.00</strong>元</p>
 						<p>-：<strong>10.00</strong>元</p>
 						<p>-：<strong>10.00</strong>元</p>
 						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<strong>10.00</strong>元</p>
+						<p>-：<strong>10.00</strong>元</p> -->
 					</div>
-				</li> -->
-				<li>
+				</li>
+				<!-- <li>
 					<h3>1日：</h3>
 					<div>
 						<p>-：<strong>10.00</strong>元</p>
@@ -37,7 +42,7 @@
 						<p class="lastLine">-：<strong>10.00</strong>元</p>
 						<p class="lastLine">-：<strong>10.00</strong>元</p>
 					</div>
-				</li>
+				</li> -->
 			</ul>
 			<div class="monthSum">
 				<div>
@@ -173,6 +178,7 @@ export default {
 }
 .alls .box ul li div p{
 	width: 33.33%;
+	height: 2.4rem;
 	border-right: 0.1rem solid #0000FF;
 	text-indent: 0.6em;
 	border-bottom: 0.1rem solid #0000FF;

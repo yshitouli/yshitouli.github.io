@@ -2,6 +2,9 @@
 	<div id="app">
 		<div id="nav">
 			<div class="first">
+				<h3 class="title"><router-link to="/">首页</router-link></h3>
+			</div>
+			<div class="first">
 				<h3 class="title"><router-link to="/resume">我的简历</router-link></h3>
 			</div>
 			<div class="first">
