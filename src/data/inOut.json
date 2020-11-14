@@ -127,7 +127,7 @@
 	{ "flag": "expend", "type": "restaurant", "title": "矿泉水", "money": 1.00, "time": {"year": 2020, "month": 7, "day": 8, "week": ""}, "explain": "", "remarks": "喝的" },
 	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 9.00, "time": {"year": 2020, "month": 7, "day": 8, "week": ""}, "explain": "鸡蛋汉堡", "remarks": "正餐" },
 	{ "flag": "expend", "type": "restaurant", "title": "晚餐", "money": 8.50, "time": {"year": 2020, "month": 7, "day": 8, "week": ""}, "explain": "炒饭", "remarks": "正餐" },
-	{ "flag": "expend", "type": "traffic", "title": "地铁", "money": 5.00, "time": {"year": 2020, "month": 7, "day": 8, "week": ""}, "explain": "", "remarks": "" },
+	{ "flag": "expend", "type": "traffic", "title": "地铁", "money": 6.00, "time": {"year": 2020, "month": 7, "day": 8, "week": ""}, "explain": "", "remarks": "" },
 	{ "flag": "expend", "type": "restaurant", "title": "早餐", "money": 7.00, "time": {"year": 2020, "month": 7, "day": 9, "week": ""}, "explain": "烤热面", "remarks": "正餐" },
 	{ "flag": "expend", "type": "restaurant", "title": "矿泉水", "money": 1.00, "time": {"year": 2020, "month": 7, "day": 9, "week": ""}, "explain": "", "remarks": "喝的" },
 	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 12.90, "time": {"year": 2020, "month": 7, "day": 9, "week": ""}, "explain": "黄焖鸡", "remarks": "正餐" },
@@ -424,6 +424,14 @@
 	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 18.80, "time": {"year": 2020, "month": 11, "day": 12, "week": "四"}, "explain": "鸡肉炒饭", "remarks": "饿了吗外卖" },
 	{ "flag": "expend", "type": "cloth", "title": "袖套", "money": 17.90, "time": {"year": 2020, "month": 11, "day": 12, "week": "四"}, "explain": "5双", "remarks": "淘宝" },
 	{ "flag": "expend", "type": "restaurant", "title": "早餐", "money": 6.00, "time": {"year": 2020, "month": 11, "day": 13, "week": "五"}, "explain": "肠粉", "remarks": "摆摊的" },
+	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 17.00, "time": {"year": 2020, "month": 11, "day": 13, "week": "五"}, "explain": "快餐", "remarks": "饭店" },
+	{ "flag": "expend", "type": "hous", "title": "房租", "money": 700.00, "time": {"year": 2020, "month": 11, "day": 13, "week": "五"}, "explain": "1个月", "remarks": "11月13日~12月13日" },
+	{ "flag": "expend", "type": "electron", "title": "电脑保护膜", "money": 99.98, "time": {"year": 2020, "month": 11, "day": 13, "week": "五"}, "explain": "MateBookXPro2020款", "remarks": "京东" },
+	{ "flag": "expend", "type": "communication", "title": "话费", "money": 199.59, "time": {"year": 2020, "month": 11, "day": 13, "week": "五"}, "explain": "", "remarks": "中国移动手机软件" },
+	{ "flag": "expend", "type": "restaurant", "title": "晚餐", "money": 17.88, "time": {"year": 2020, "month": 11, "day": 13, "week": "五"}, "explain": "炒饭", "remarks": "美团外卖" },
+
+
+	{ "flag": "expend", "type": "restaurant", "title": "假的", "money": 1.00, "time": {"year": 2021, "month": 11, "day": 13, "week": "五"}, "explain": "假的", "remarks": "假的" },
 
 	{ "flag": "", "type": "", "title": "", "money": 0, "time": {"year": 0, "month": 0, "day": 0, "week": ""}, "explain": "", "remarks": "" }
 ]

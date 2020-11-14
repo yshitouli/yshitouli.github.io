@@ -14,6 +14,7 @@ function getList(list, flag, year, month, type) {
 	let arr = [];
 	if(arguments.length === 1) {
 		// list，返回所有的数据，不含空
+		console.log("接收到总集合")
 		flag = "";
 		year = 0;
 		month = 0;
@@ -63,6 +64,7 @@ function getList(list, flag, year, month, type) {
 		if(typeof(flag)==="string") {
 			if(typeof(year)==="number") {
 				// list、flag和year，返回某年所有的 支出或收入
+				console.log("接收到年支出或收入");
 				month = 0;
 				type = "";
 				list.forEach(item => {
@@ -194,11 +196,43 @@ function getMonth(list) {
 }
 
 
+/**
+ * 获取某年某月多少天
+ * @param {*} year 年
+ * @param {*} month 月
+ * @return { Array } 日期数组
+ */
+function getDays(year, month) {
+	let arr = [];
+	if([1,3,5,7,8,10,12].indexOf(month) != -1) {
+		for(let i=1; i<=31; i++) {
+			arr.push(i);
+		}
+	} else if([4,6,9,11].indexOf(month) != -1) {
+		for(let i=1; i<=30; i++) {
+			arr.push(i);
+		}
+	} else if(month === 2) {
+		if((year%4==0&&year%100!=0)||year%400==0) {
+			for(let i=1; i<=29; i++) {
+				arr.push(i);
+			}
+		} else {
+			for(let i=1; i<=28; i++) {
+				arr.push(i);
+			}
+		}
+	}
+	return arr;
+}
+
+
 module.exports = {
 	getList,
 	computeSum,
 	getYear,
-	getMonth
+	getMonth,
+	getDays
 }
 
 
