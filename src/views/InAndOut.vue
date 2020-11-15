@@ -1,7 +1,6 @@
 <template>
 	<div class="alls">
 		<h1>{{this.$route.params.year}}年 收入和支出</h1>
-		<!-- <h1> <span v-text="year"></span> 年 收入和支出</h1> -->
 	
 		<div class="yearSum">
 			<span>年总收入：</span><b>{{getYearIncomeSum}}</b> 元 ===========
@@ -10,40 +9,16 @@
 	
 		<div class="box one">
 			<h2>{{this.$route.params.month}}月份</h2>
-			<!-- <h2> <span v-text="month"></span> 月份</h2> -->
 			<ul>
-				<li v-for="(item,index) in day" :key="index">
-					<h3>{{item}}日：</h3>
+				<li v-for="(item,index) in getDayList" :key="index">
+					<h3>{{index+1}}日：</h3>
 					<div>
-						<p v-for="(val,i) in getDataList" :key="i">
-							<font v-if="val.time.day==item">
-							{{val.title}}{{val.explain?"-"+val.explain:""}}：<strong v-if="val.flag=='expend'">{{val.money}}</strong><b v-else>{{val.money}}</b>元
-							</font>
+						<p v-for="(val,i) in item" :key="i" :class="{lastLine: flagLastLine(item.length,i)}">
+							{{val.title}}{{val.explain?"-"+val.explain:""}}：<strong v-if="val.flag=='expend'">{{val.money.toFixed(2)}}</strong><b v-else>{{val.money.toFixed(2)}}</b>元
 						</p>
-						<!-- 
-						<p>-：<b>100.00</b>元</p>
-						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<strong>10.00</strong>元</p>
-						-->
+						
 					</div>
 				</li>
-				<!-- <li>
-					<h3>1日：</h3>
-					<div>
-						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<b>100.00</b>元</p>
-						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<strong>10.00</strong>元</p>
-						<p>-：<strong>10.00</strong>元</p>
-						<p class="lastLine">-：<strong>10.00</strong>元</p>
-						<p class="lastLine">-：<strong>10.00</strong>元</p>
-					</div>
-				</li> -->
 			</ul>
 			<div class="monthSum">
 				<div>
@@ -56,10 +31,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- <h1>这里是收支页</h1>
-		<h2>{{this.$route.params}}</h2>
-		<h2>支出总和：{{getExpendSum}}</h2>
-		<h2>收入总和：{{getIncomeSum}}</h2> -->
 	</div>
 </template>
 
@@ -81,29 +52,48 @@ export default {
 	},
 	computed: {
 		getDataList() {
-			// console.log("发送"+this.year+"支出请求")
 			return util.getList(list,this.year,this.month);
 		},
 		getExpendSum() {
-			return util.computeSum(util.getList(this.getDataList,"expend"));
+			let sum = util.computeSum(util.getList(this.getDataList,"expend"))
+			return sum;
 		},
 		getIncomeSum() {
 			return util.computeSum(util.getList(this.getDataList,"income"));
 		},
 		day() {
-			return util.getDays(this.year, this.month);
+			return util.getDays(this.year, this.month, util.getListDay(this.getDataList));
 		},
 		getYearExpendSum() {
-			return util.computeSum(util.getList(list,"expend",this.year));
+			let sum = util.computeSum(util.getList(list,"expend",this.year))
+			return sum;
 		},
 		getYearIncomeSum() {
-			return util.computeSum(util.getList(list,"income",this.year));
+			let sum = util.computeSum(util.getList(list,"income",this.year));
+			return sum;
+		},
+		getDayList() {
+			let arr = [];
+			this.day.forEach(item => {
+				let arr2 = [];
+				this.getDataList.forEach(value => {
+					if(value.time.day == item) {
+						arr2.push(value);
+					}
+				});
+				arr.push(arr2);
+			});
+			return arr;
 		}
 	},
 	methods: {
 		getParams() {
 			this.year = Number(this.$route.params.year);
 			this.month = Number(this.$route.params.month);
+		},
+		flagLastLine(len,i) {
+			let j = Math.floor((len-1)/3)*3-1;
+			return i>j;
 		}
 	},
 	watch: {},
@@ -174,6 +164,9 @@ export default {
 	border-right: 0.1rem solid #0000FF;
 	text-indent: 0.6em;
 	border-bottom: 0.1rem solid #0000FF;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .alls .box ul li div p.lastLine{
 	border-bottom: none;
@@ -181,9 +174,9 @@ export default {
 .alls .box ul li div p:nth-child(3n){ /* 每行最后一项不要 */
 	border-right: 0;
 }
-.alls .box ul li div p:last-child{ /* 最后一项不要 */
+/* .alls .box ul li div p:last-child{ 最后一项不要 
 	border-right: 0;
-}
+} */
 .alls .box ul li div p b{
 	font-weight: normal;
 	color: #0000FF;

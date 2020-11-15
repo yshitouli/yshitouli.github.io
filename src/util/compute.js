@@ -209,27 +209,27 @@ function getMonth(list) {
 
 /**
  * 获取某年某月多少天
- * @param {*} year 年
- * @param {*} month 月
+ * @param { Number } year 年
+ * @param { Number } month 月
  * @return { Array } 日期数组
  */
-function getDays(year, month) {
+function getDays(year, month, num) {
 	let arr = [];
 	if([1,3,5,7,8,10,12].indexOf(month) != -1) {
-		for(let i=1; i<=31; i++) {
+		for(let i=1; i<=31&i<=num; i++) {
 			arr.push(i);
 		}
 	} else if([4,6,9,11].indexOf(month) != -1) {
-		for(let i=1; i<=30; i++) {
+		for(let i=1; i<=30&i<=num; i++) {
 			arr.push(i);
 		}
 	} else if(month === 2) {
 		if((year%4==0&&year%100!=0)||year%400==0) {
-			for(let i=1; i<=29; i++) {
+			for(let i=1; i<=29&i<=num; i++) {
 				arr.push(i);
 			}
 		} else {
-			for(let i=1; i<=28; i++) {
+			for(let i=1; i<=28&i<=num; i++) {
 				arr.push(i);
 			}
 		}
@@ -238,12 +238,29 @@ function getDays(year, month) {
 }
 
 
+/**
+ * 获取 某月集合 最大天数
+ * @param { Array } list 月集合
+ * @return { Number } 最大天数
+ */
+function getListDay(list) {
+	let num = 0;
+	list.forEach(item => {
+		if(item.time.day > num) {
+			num = item.time.day;
+		}
+	});
+	return num;
+}
+
+
 module.exports = {
 	getList,
 	computeSum,
 	getYear,
 	getMonth,
-	getDays
+	getDays,
+	getListDay
 }
 
 

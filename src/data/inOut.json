@@ -431,7 +431,10 @@
 	{ "flag": "expend", "type": "restaurant", "title": "晚餐", "money": 17.88, "time": {"year": 2020, "month": 11, "day": 13, "week": "五"}, "explain": "炒饭", "remarks": "美团外卖" },
 	{ "flag": "expend", "type": "communication", "title": "快递", "money": 6.00, "time": {"year": 2020, "month": 11, "day": 14, "week": "六"}, "explain": "", "remarks": "淘宝退货" },
 	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 14.00, "time": {"year": 2020, "month": 11, "day": 14, "week": "六"}, "explain": "快餐", "remarks": "饭店" },
-	{ "flag": "expend", "type": "restaurant", "title": "晚餐", "money": 21.30, "time": {"year": 2020, "month": 11, "day": 14, "week": "六"}, "explain": "炸鸡", "remarks": "饿了吗外卖" },
+	{ "flag": "expend", "type": "restaurant", "title": "晚餐", "money": 21.30, "time": {"year": 2020, "month": 11, "day": 14, "week": "六"}, "explain": "炸鸡", "remarks": "美团外卖" },
+	{ "flag": "expend", "type": "restaurant", "title": "午餐", "money": 27.30, "time": {"year": 2020, "month": 11, "day": 15, "week": "日"}, "explain": "炸鸡", "remarks": "美团外卖" },
+	{ "flag": "expend", "type": "restaurant", "title": "晚餐", "money": 22.48, "time": {"year": 2020, "month": 11, "day": 15, "week": "日"}, "explain": "炸鸡", "remarks": "美团外卖" },
+	{ "flag": "expend", "type": "restaurant", "title": "果汁粉", "money": 30.74, "time": {"year": 2020, "month": 11, "day": 15, "week": "日"}, "explain": "40袋", "remarks": "淘宝" },
 
 	{ "flag": "", "type": "", "title": "", "money": 0, "time": {"year": 0, "month": 0, "day": 0, "week": ""}, "explain": "", "remarks": "" }
 ]
